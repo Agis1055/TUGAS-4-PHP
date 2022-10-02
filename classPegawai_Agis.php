@@ -21,7 +21,7 @@ class Pegawai{
 
     //member 3 method
     public function setGajiPokok($jabatan, $gapok){
-        $this->gapok = $gapok;
+        $this->jabatan = $jabatan;
         switch ($jabatan){
             case "manager":
                 $gapok = 15000000;
