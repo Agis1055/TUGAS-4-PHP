@@ -20,7 +20,7 @@ class Pegawai{
     }
 
     //member 3 method
-    private function setGajiPokok($jabatan, $gapok){
+    public function setGajiPokok($jabatan, $gapok){
         $this->gapok = $gapok;
         switch ($jabatan){
             case "manager":
@@ -40,29 +40,29 @@ class Pegawai{
         }
     }
     
-    private function setTunjab($tunjab, $gapok){
+    public function setTunjab($tunjab, $gapok){
         $this->tunjab = $tunjab;
         $tunkel = 0.20 * $gapok;
     }
 
-    private function setTunkel($tunkel, $gapok, $status){
+    public function setTunkel($tunkel, $gapok, $status){
         $this->tunkel = $tunkel;
         if($status = 'menikah')
         $tunkel = 0.10 * $gapok;
         else $tunkel = 0;
     }
 
-    private function setGakot($gapok, $tunjab, $tunkel, $gakot){
+    public function setGakot($gapok, $tunjab, $tunkel, $gakot){
         $this->gakot = $gakot;
         $gakot = $gapok + $tunjab + $tunkel;
     }
-    private function setZakatProfesi($zakatprofes, $gapok, $agama, $gakot){
+    public function setZakatProfesi($zakatprofes, $gapok, $agama, $gakot){
         $this->zakatprofes = $zakatprofes;
         if($agama = 'islam' && $gakot >= 4000000)
         $zakatprofes = 0.025 * $gapok;
         else $zakatprofes = 0;
     }
-    private function setGaber($gakot, $gaber, $zakatprofes){
+    public function setGaber($gakot, $gaber, $zakatprofes){
         $this->gaber = $gaber;
         $gaber = $gakot - $zakatprofes;
     }
